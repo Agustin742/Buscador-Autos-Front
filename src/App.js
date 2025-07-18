@@ -32,7 +32,7 @@ function App() {
 
     try {
       const resp = await fetch (
-        `http://127.0.0.1:8000/api/autos?${params.toString()}`
+        `https://buscador-autos-back.onrender.com/api/autos?${params.toString()}`
       );
       const data = await resp.json();
       console.log("Respuesta de la API: ", data);
