@@ -1,38 +1,200 @@
-.App {
-  text-align: center;
+body {
+    background-color: #181818;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1 {
+    color: #e53935;    
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .filters-section {
+    display: flex;
+    flex-wrap: wrap;               
+    gap: 1rem;                     
+    justify-content: center;       
+    margin-bottom: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .filters-section input,
+  .filters-section select {
+    background: #232323;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    min-width: 130px;
+    margin-bottom: 0.2rem;
+    outline: none;
+    transition: border 0.2s;
   }
+  .filters-section input:focus,
+  .filters-section select:focus {
+    border: 1.5px solid #e53935;
+  }
+  button {
+    background: #e53935;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px #0005;
+    margin-left: 1rem;
+  }
+  button:hover {
+    background: #b71c1c;
+  }
+
+  .resultados-section {
+    margin-top: 2rem;
+  }
+  .autos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.5rem;
+  }
+  .auto-card {
+    background: #232323;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px #0007;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.18s;
+  }
+  .auto-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 32px #e5393522;
+  }
+  .auto-card img {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    max-width: 220px;
+    object-fit: cover;
+    background: #111;
+    box-shadow: 0 2px 12px #0006;
+  }
+  .auto-card h3 {
+    color: #fff;
+    margin: 0.5rem 0 0.6rem 0;
+    font-size: 1.15rem;
+    text-align: center;
+  }
+  .auto-card p {
+    margin: 0.2rem 0;
+    color: #ccc;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .auto-card a {
+    margin-top: 0.7rem;
+    color: #e53935;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+  }
+  .auto-card a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 700px) {
+    .main-container {
+      padding: 1rem 0.2rem;
+    }
+    .autos-grid {
+      grid-template-columns: 1fr;
+    }
+    .filters-section {
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .busqueda-principal {
+    background: #232323;
+    border: 2px solid #e53935;
+    border-radius: 10px;
+    padding: 2rem 1rem 1.5rem 1rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 24px 0 rgba(229,57,53, 0.09);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.busqueda-principal input {
+    background: #181818;
+    color: #fff;
+    border: 2px solid #e53935;
+    border-radius: 6px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    width: 90%;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.busqueda-principal input:focus {
+    border: 2px solid #fff;
+}
+
+.busqueda-principal label {
+    font-weight: bold;
+    color: #e53935;
+    margin-bottom: 0.3rem;
+    display: block;
+    text-align: left;
+    width: 90%;
+    letter-spacing: 0.5px;
+}
+
+/* Opcional: título para la sección principal */
+.busqueda-principal h2 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.auto-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #181818;
+    display: block;
 }
