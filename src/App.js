@@ -11,11 +11,6 @@ function App() {
   const [kmMax, setKmMax] = useState('');
   const [estado, setEstado] = useState('');
   const [provincia, setProvincia] = useState('');
-  const [combustible, setCombustible] = useState('');
-  const [transmision, setTransmision] = useState('');
-  const [color, setColor] = useState('');
-  const [puertas, setPuertas] = useState('');
-  const [dueno, setDueno] = useState('');
   const [autos, setAutos] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -34,11 +29,6 @@ function App() {
     if (kmMax) params.append("km_max", kmMax);
     if (estado) params.append("estado", estado);
     if (provincia) params.append("provincia", provincia);
-    if (combustible) params.append("combustible", combustible);
-    if (transmision) params.append("transmision", transmision);
-    if (color) params.append("color", color);
-    if (puertas) params.append("puertas", puertas);
-    if (dueno) params.append("dueno", dueno);
 
     try {
       const resp = await fetch (
